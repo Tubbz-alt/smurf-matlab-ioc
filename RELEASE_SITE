@@ -1,0 +1,6 @@
+BASE_MODULE_VERSION=R3.15.5-1.0
+EPICS_SITE_TOP=/usr/local/src/epics
+BASE_SITE_TOP=/usr/local/src/epics/base
+EPICS_MODULES=/usr/local/src/epics/R3.15.5-1.0/modules
+IOC_SITE_TOP=/usr/local/src/epics/iocTop
+PACKAGE_SITE_TOP=/usr/local/src/packages
