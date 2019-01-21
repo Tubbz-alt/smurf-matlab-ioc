@@ -1,5 +1,5 @@
 # Create the builder image
-FROM epics_slac:latest as builder
+FROM jesusvasquez333/smurf-epics-slac:R1.0.0 as builder
 # App version (passed as --build-arg)
 ARG APP_VERSION
 # Build the app in /root

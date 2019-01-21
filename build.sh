@@ -21,5 +21,5 @@ app_version=$(basename -- `find . -name '*.tar.gz'`)
 app_version=${app_version%%.*}
 
 # Build the docker and tagged it with the application version
-docker build --build-arg APP_VERSION=${app_version} -t matlab_ioc .
-docker tag matlab_ioc matlab_ioc:${app_version}
+docker build --build-arg APP_VERSION=${app_version} -t jesusvasquez333/smurf-matlab-ioc .
+docker tag jesusvasquez333/smurf-matlab-ioc jesusvasquez333/smurf-matlab-ioc:${app_version}
