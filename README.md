@@ -2,7 +2,7 @@
 
 ## Description
 
-This docker image, named **matlab_ioc** contains the SLAC's Matlab support IOC.
+This docker image, named **smurf-matlab-ioc** contains the SLAC's Matlab support IOC.
 
 It is based on centos 6.10, and the IOC application is build using the *epics_slac* image, which contains all the SLAC's packages, EPICS base, and EPICS modules need to build this IOC.
 
@@ -26,7 +26,7 @@ As any IOC at SLAC, this IOC need to a data directory where it will read and wri
 
 You should have this directory in your host CPU, and map it to */data/* inside the container.
 
-You also need to publish the EPIC channel access ports (tcp and udp ports 5064, 5065 by default) to the host if you want external clients to have access to the IOC's PVs. (**
+You also need to publish the EPIC channel access ports (tcp and udp ports 5064, 5065 by default) to the host if you want external clients to have access to the IOC's PVs. (**Note**: Other containers running in the same host will have access to these ports even if they are not published to the host).
 
 When the container is started, by default the IOC is started inside it.
 
@@ -37,10 +37,10 @@ The container can be run in two ways: in the foreground or in the background.
 You can start the container in the foreground with this command
 
 ```
-docker run -ti --rm --name matlab_ioc \
+docker run -ti --rm --name smurf-matlab-ioc \
 -v <LOCAL_DATA_PATH>:/data \
 -p 5064:5064 -p 5065:5065 -p 5064:5064/udp -p 5065:5065/udp \
-matlab_ioc:<VERSION>
+jesusvasquez333/smurf-matlab-ioc:<VERSION>
 ```
 
 Where:
@@ -53,10 +53,10 @@ By default the container will start the IOC.
 You can start the container in the background with this command
 
 ```
-docker run -tid --rm --name matlab_ioc \
+docker run -tid --rm --name smurf-matlab-ioc \
 -v <LOCAL_DATA_PATH>:/data \
 -p 5064:5064 -p 5065:5065 -p 5064:5064/udp -p 5065:5065/udp \
-matlab_ioc:<VERSION>
+jesusvasquez333/smurf-matlab-ioc:<VERSION>
 ```
 
 Where the parameters are the same explained in the previous case.
@@ -77,4 +77,4 @@ You can attached to the container with the command `docker attach matlab_ioc`. A
 
 ### Stop and container
 
-you can stop the container with the command `docker stop matlab_ioc`.
+you can stop the container with the command `docker stop smurf-matlab-ioc`.
