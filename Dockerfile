@@ -15,9 +15,9 @@ RUN make distclean && make
 # Create the final image
 FROM centos:6.10
 ## EPICS CONFIGURATIONS (should come from builder)
-ENV EPICS_CA_REPEATER_PORT 5067
+ENV EPICS_CA_REPEATER_PORT 5065
 ENV EPICS_CA_AUTO_ADDR_LIST YES
-ENV EPICS_CA_SERVER_PORT 5066
+ENV EPICS_CA_SERVER_PORT 5064
 ENV IOC_DATA /data/epics/ioc/data
 # App version (passed as --build-arg)
 ARG APP_VERSION
