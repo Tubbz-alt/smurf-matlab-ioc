@@ -1,0 +1,3 @@
+SIOC:$(S):$(M):AO$(N)		1	scan
+SIOC:$(S):$(M):CALC$(N)		1	scan
+SIOC:$(S):$(M):CALCOUT$(N)	1	scan

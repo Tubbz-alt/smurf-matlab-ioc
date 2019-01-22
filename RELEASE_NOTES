@@ -1,0 +1,88 @@
+J. Vasquez, 2019-01-22:
+- Took from the SLAC IOC, hosted on CVS, tagged MatlabSupport-R4-2-3, cleaned up (removing CVS, cram and LCLS' IOC directories). Also dooing a `make distclean`. This is the starting point for the smurf's docker-based IOC.
+
+**********
+IMPORTANT!
+----------
+As of 15-Mar-2017 please...
+
+source /afs/slac/g/lcls/epics/setup/go_epics_3.15.5-1.0.bash
+
+...before eco-ing this application.  It has been upgraded to
+EPICS 3.15 and 64-bit build.  Be sure to build (make) on a 
+64-bit RHEL6 machine such as LCLS-DEV3.
+***************************************************************
+MatlabSupport-R4-2-3: Mike Zelazny 15-Aug-2018, Source /usr/local/lcls/epics/iocCommon/facility/soft_pre_st_add_photon_gateway.cmd in LCLS/LCLS2 soft IOCs as it will no longer be included in $IOC/*/st.cmd as per Kristi. Note, however, that this will fail on Dev, but is not fatal.
+MatlabSupport-R4-2-2: Mike Zelazny 14-Aug-2018, Pickup devSeqCar.tpl-arch from seq/R2.2.4-1.1.
+MatlabSupport-R4-2-1: Mike Zelazny 10-Aug-2018, Upgrade to autosave/R5.7.1-3.2.0 and iocAdmin/R3.1.15-1.1.0 as per Bruce Hill to pickup archive_*.tpl-arch.
+MatlabSupport-R4-2-0: Mike Zelazny 08-Aug-2018, Auto-generation of archive requests lists.
+MatlabSupport-R4-1-0: Mike Zelazny 07-Aug-2018, Add iocLogPrefix, QSrv, system, seqStats
+MatlabSupport-R4-0-1: Mike Zelazny 31-Mar-2017, Upgrade Autosave to R5.7.1-1.0.0 to clear "write_it: fchmod returned -1" message as per Marcio.
+MatlabSupport-R4-0-0: Mike Zelazny 15-Mar-2017, Upgrade to EPICS 3.15 and 64-bit build.
+MatlabSupport-R3-2-5: Mike Zelazny 13-Jan-2015, CATER 122101 - More MATLAB PVs sioc-sys*-ml03
+MatlabSupport-R3-2-4: Mike Zelazny 16-Aug-2014, Build with epics_3-14-12-3_1-0.
+MatlabSupport-R3-2-3: Mike Zelazny 25-Aug-2014, Remove TSEL test.
+MatlabSupport-R3-2-2: Mike Zelazny 25-Aug-2014, Moved test to LCLS sioc-sys0-ml02.
+MatlabSupport-R3-2-1: Mike Zelazny 25-Aug-2014, Test for TSEL vs caget error - sioc-sys1-ml02.
+MatlabSupport-R3-2-0-1: Mike Zelazny 07-Jul-2014, RHEL5 build.
+MatlabSupport-R3-2-0-0: Mike Zelazny 17-Sep-2013, Pickup TSEL patch in base-R3-14-12-3_1-0
+MatlabSupport-R3-1-0-0: Mike Zelazny 12-Sep-2013, CATER 110742: MATLAB AGE PVs.
+MatlabSupport-R3-0-0-2: Mike Zelazny 29-Mar-2013, Static build
+MatlabSupport-R3-0-0-1: Mike Zelazny 14-Mar-2013, Add LCLS2
+MatlabSupport-R3-0-0-0: Mike Zelazny 17-May-2012, Add Support for APE Test Facilities.  Upgrade to EPICS 3-14-12 + MODULES_STABLE_VERSION
+MatlabSupport-R2-2-0-3: Mike Zelazny 27-Feb-2012, Add support for XTA, ASTA
+                        Mike Zelazny 24-Feb-2012, Remove EPICS_IOC_LOG_CLIENT_INET - no longer supported.
+MatlabSupport-R2-2-0-2: Mike Zelazny 10-Oct-2011, Autosave CALCOUT.OUT
+MatlabSupport-R2-2-0-1: Mike Zelazny 31-Mar-2011, LCLS SIOCs to lcls-daemon0
+MatlabSupport-R2-2-0-0: Mike Zelazny 14-Feb-2011, Remove Array CALCs, no longer needed.
+MatlabSupport-R2-1-0-1: Mike Zelazny 29-Jan-2011, EPICS_CA_MAX_ARRAY_BYTES to 100000, was 80000000.
+MatlabSupport-R2-1-0-0: Mike Zelazny 28-Jan-2011, Add PVs to count the number of times each PV is processed.
+MatlabSupport-R2-0-0-0: Mike Zelazny 13-Dec-2010, Make accelerator agnostic for FACET
+MatlabSupport-R1-1-4: Mike Zelazny 21-Jun-2010, Photon gateway setup moved to common startup file.
+MatlabSupport-R1-1-3: Mike Zelazny 01-Jun-2010, Explicitly add the photon gateway to EPICS_CA_ADDR_LIST for CALC record usage.
+MatlabSupport-R1-1-2: Mike Zelazny 04-May-2010, Convert to iocAdminSoft.db & Add iocRelease.db
+MatlabSupport-R1-1-1: Mike Zelazny 26-Apr-2010, Save/Restore CALC values for William
+MatlabSupport-R1-1-0: Mike Zelazny 23-Apr-2010, Added Array CALCs (ACALC) for Henrik + CALCOUTs for William.
+MatlabSupport-R1-0-0: Mike Zelazny 20-Apr-2010
+   Properly Macro-ize.
+   Added ML01 & ML02.
+   Added CALC records.
+   Upgrade to lcls6 EPICS.
+   MATLAB:n PVs become SIOC:SYS0:ML00:AO9n.  Affects the following Matlab scripts:
+      File: Phase_Scans.m     
+      File: bpms_vs_z_gui.m   
+      File: charge_feedback.m 
+      File: do_feedback.m     
+      File: epicsSimul_init.m 
+      File: laser_power_feedback.m    
+      File: laser_power_set.m 
+      File: lfbk.m            
+      File: linac_fb.m        
+      File: measure_qe.m      
+      File: rfrun.m           
+      File: rfscope.m         
+      File: schloop.m         
+      File: schottky.m        
+      File: schottky_scan.m   
+MatlabSupport-R0-2-1: Mike Zelazny 17-Jun-2009, 400 more AO's
+MatlabSupport-R0-2-0: Mike Zelazny 27-May-2009, Time stamps for AO PVs + upgrade to base-R3-14-8-2-lcls3 iocAdmin-R3-0-0 autosave-R4-4-lcls2 seq-R2-0-11-lcls1
+MatlabSupport-R0-1-3: Mike Zelazny 31-Mar-2009, upgrade to iocAdmin-R2-1-4
+MatlabSupport-R0-1-2: Mike Zelazny 16-Jul-2008, fix AO unnit numbers in database
+MatlabSupport-R0-1-1: Mike Zelazny 15-Jul-2008, 200 more AO's for Joe Frisch
+MatlabSupport-R0-1-0: Mike Zelazny 26-Jun-2008, support long strings for Joe Frisch, Heinz-Dieter Nuhn
+MatlabSupport-R0-0-15: Mike Zelazny 25-Jun-2008, fix typo in SO config template
+MatlabSupport-R0-0-14: Mike Zelazny 25-Jun-2008, 150 more AO's for Joe Frisch
+MatlabSupport-R0-0-13: Mike Zelazny 21-May-2008, 50 more AO's for Vojtech
+MatlabSupport-R0-0-12: Mike Zelazny 11-Mar-2008, Larger float waveforms for Glen White.
+MatlabSupport-R0-0-11: Mike Zelazny 27-Feb-2008, Move iocLogInit later in st.cmd so seq messages don't get throttled away.
+MatlabSupport-R0-0-10: Mike Zelazny 26-Feb-2008, More logging for Heinz-Dieter.
+MatlabSupport-R0-0-9: Mike Zelazny 17-Feb-2008, Tag log messages with ioc name using virtual IPs.
+MatlabSupport-R0-0-8: Mike Zelazny 15-Feb-2008, Add pv change logging.
+MatlabSupport-R0-0-7: Mike Zelazny 13-feb-2008, Fix SO db error.
+MatlabSupport-R0-0-6: Mike Zelazny 11-Feb-2008, Ernest says, "Sorry, but we must stick with the naming convention."
+MatlabSupport-R0-0-5: Mike Zelazny 10-Feb-2008, Add comment field for Joe Frisch & Heinz-Dieter Nuhn
+MatlabSupport-R0-0-4: Mike Zelazny 05-Feb-2008, 50 more AO's for Heinz-Dieter Nuhn
+MatlabSupport-R0-0-3: Mike Zelazny 05-Feb-2008, 25 float waveforms SIOC:SYS0:ML00:FWF[01-25] for Glen White
+MatlabSupport-R0-0-2: Mike Zelazny 04-Jan-2008, 50 more AO's SIOC:SYS0:ML00:AO[051-100]
+MatlabSupport-R0-0-1: Mike Zelazny 15-Nov-2007, Load iocAdmin databse, was iocMon.
+MatlabSupport-R0-0-0: Mike Zelazny 14-Nov-2007, Migrate to channel access network

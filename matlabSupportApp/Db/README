@@ -1,0 +1,9 @@
+vdct ../../dbd/matlabSupport.dbd 1matlabAOSupport.db &
+vdct ../../dbd/matlabSupport.dbd 1matlabFWFSupport.db &
+vdct ../../dbd/matlabSupport.dbd 1matlabSOSupport.db &
+vdct ../../dbd/matlabSupport.dbd 1matlabCASupport.db &
+vdct ../../dbd/matlabSupport.dbd 1matlabCALCSupport.db &
+
+For William's AGE PVs:
+vdct ../../dbd/matlabSupport.dbd now.db & # Seconds Past Epoch
+vdct ../../dbd/matlabSupport.dbd 1matlabAGESupport.db &

@@ -4,17 +4,19 @@
 
 This docker image, named **smurf-matlab-ioc** contains the SLAC's Matlab support IOC.
 
-It is based on centos 6.10, and the IOC application is build using the *epics_slac* image, which contains all the SLAC's packages, EPICS base, and EPICS modules need to build this IOC.
+It is based on centos 6.10, and the IOC application is build using the *smurf-epics-slac* image, which contains all the SLAC's packages, EPICS base, and EPICS modules need to build this IOC.
 
 The name of the IOC used in this project is **sioc-smrf-ml00**.
 
 ## Source code
 
-As the IOC git repo is not hosted internally at SLAC (on a AFS-based git repository), this image need the source code in form of a tarball file. The tarball file name must be the version tag you want to build, with extension *.tar.gz*.
+The IOC source code was taken from SLAC's version, hosted in an internal CVS repository.
+
+The code was manually checkout from CVS (tagged version **MatlabSupport-R4-2-3**), cleaned (removed references to CVS, cram, and SLAC's IOCs), and copied into this repository.
 
 ## Building the image
 
-The provided script *build.sh* will automatically build the docker image. It will look for the source code tarball, extracting the version number from the file name. The resulting image is tagged using this version number.
+The provided script *build_docker.sh* will automatically build the docker image. It will tag the resulting image using the same git tag string (as returned by `git describe --tags --always`).
 
 ## Running the container
 

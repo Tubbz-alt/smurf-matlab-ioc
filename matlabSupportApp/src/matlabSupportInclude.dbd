@@ -1,0 +1,11 @@
+include "base.dbd"
+include "devSeqCar.dbd"
+include "iocAdmin.dbd"
+include "asSupport.dbd"
+include "calcSupport.dbd"
+include "sscanSupport.dbd"
+include "PVAServerRegister.dbd"
+include "qsrv.dbd"
+registrar(ChangeLoggerRegistrar)
+registrar(iocshSystemCommand)
+
