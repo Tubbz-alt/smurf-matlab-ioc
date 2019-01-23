@@ -48,7 +48,7 @@ jesusvasquez333/smurf-matlab-ioc:<VERSION>
 Where:
 - **<LOCAL_DATA_PATH>**: is the absolute path of the root of the IOC data directory in the host local disk. For example, if in the host this directory is `/data/epics/ioc/data/sioc-smrf-ml00`, then **<LOCAL_DATA_PATH>** = **/data**
 By default the container will start the IOC.
-- **<VERSION>**: is the tagged version of the container your want to run. If empty, the latest version will be used (not recommend!).
+- **<VERSION>**: is the tagged version of the container your want to run.
 
 ### Run the container in the background
 
@@ -70,13 +70,13 @@ You can check the status of running containers with the `docker ps` command. It 
 ```
 $ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-163326dec993        matlab_ioc          "./st.cmd"          31 seconds ago      Up 30 seconds                           awesome_raman
+163326dec993        smurf-matlab-ioc    "./st.cmd"          31 seconds ago      Up 30 seconds                           awesome_raman
 ```
 
 ### Attaching to the container running in the background
 
-You can attached to the container with the command `docker attach matlab_ioc`. And you can deattach again pressing `CRTL+p` follwed by `CRTL+q`.
+You can attached to the container with the command `docker attach matlab_ioc`. And you can detach again pressing `CRTL+p` followed by `CRTL+q`.
 
 ### Stop and container
 
-you can stop the container with the command `docker stop smurf-matlab-ioc`.
+You can stop the container with the command `docker stop smurf-matlab-ioc`.
