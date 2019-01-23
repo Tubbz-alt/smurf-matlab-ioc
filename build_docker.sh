@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+# Definitions
+repo=smurf-matlab-ioc
+org=jesusvasquez333
+
 # Use the git tag to tag the docker image
-app_version=$(git describe --tags --always)
+tag=$(git describe --tags --always)
 
 # Build the docker and tagged it with the application version
-docker build -t jesusvasquez333/smurf-matlab-ioc .
-docker tag jesusvasquez333/smurf-matlab-ioc jesusvasquez333/smurf-matlab-ioc:${app_version}
-printf "Docker image created: jesusvasquez333/smurf-matlab-ioc:${app_version}\n"
+docker build -t ${org}/${repo} .
+docker tag ${org}/${repo} ${org}/${repo}:${tag}
+printf "Docker image created: ${org}/${repo}:${tag}\n"
